@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fsl.jpa.mapper.EmployeeMapper" >
+
+    <resultMap id="BaseResultMap" type="com.fsl.jpa.dto.Employee" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="age" property="age" jdbcType="INTEGER" />
+        <result column="designation" property="designation" jdbcType="VARCHAR" />
+        <result column="salary" property="salary" jdbcType="BIGINT" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, `name`, age, designation, salary
+    </sql>
+
+    <insert id="saveEmployee" parameterType="com.fsl.jpa.dto.Employee">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO sys_employee(`name`, age, designation, salary) VALUES (#{name},#{age},#{designation},#{salary})
+    </insert>
+
+    <select id="get" parameterType="java.lang.Long" resultType="com.fsl.jpa.dto.Employee">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        sys_employee
+        WHERE id = #{id}
+    </select>
+
+    <delete id="delete">
+        DELETE FROM sys_employee WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.fsl.jpa.dto.Employee">
+        UPDATE sys_employee
+        SET
+        `name` = #{name},
+        age = #{age},
+        designation = #{designation},
+        salary = #{salary}
+    </update>
+
+</mapper>

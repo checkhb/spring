@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fsl.springbootmoredruid.mapper.master.StudentMapperA" >
+  <resultMap id="BaseResultMap" type="com.fsl.springbootmoredruid.dto.Student" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+  </resultMap>
+
+
+  <sql id="Base_Column_List">
+    id, address, age, email, `name`
+  </sql>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from student_copy
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="insert" parameterType="com.fsl.springbootmoredruid.dto.Student" >
+    insert into student_copy (id, address, age,
+    email, name)
+    values (#{id,jdbcType=BIGINT}, #{address,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},
+    #{email,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR})
+  </insert>
+
+
+  <insert id="insertSelective" parameterType="com.fsl.springbootmoredruid.dto.Student" >
+    insert into student_copy
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List"/>
+    from student_copy
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.fsl.springbootmoredruid.dto.Student" >
+    update student_copy
+    <set >
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.fsl.springbootmoredruid.dto.Student" >
+    update student_copy
+    <set >
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+
+  <select id="getCount" resultType="Integer">
+    select
+    count(*)
+    from student_copy
+    where 1=1
+  </select>
+
+  <insert id="batchInsert" parameterType="java.util.List">
+    insert into student_copy (id, address, age,email, name)
+    values
+    <foreach collection ="list" item="item" index= "index" separator =",">
+    ( #{item.id},#{item.address},#{item.age},#{item.email},#{item.name} )
+    </foreach>
+  </insert>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, address, age, email, name FROM student_copy
+  </select>
+
+</mapper>
