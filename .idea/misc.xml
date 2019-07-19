@@ -7,6 +7,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/springboot/springboot-more-druid/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot/springboot-rabbitmq/pom.xml" />
       </list>
     </option>
   </component>

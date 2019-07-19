@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/spring.iml" filepath="$PROJECT_DIR$/.idea/spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot/springboot-more-druid/springboot-more-druid.iml" filepath="$PROJECT_DIR$/springboot/springboot-more-druid/springboot-more-druid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot/springboot-rabbitmq/springboot-rabbitmq.iml" filepath="$PROJECT_DIR$/springboot/springboot-rabbitmq/springboot-rabbitmq.iml" />
     </modules>
   </component>
 </project>

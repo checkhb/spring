@@ -1,0 +1,16 @@
+# 运行端口
+server:
+  port: 8001
+# 对于rabbitMQ的支持
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+# 开启ACK
+  listener:
+    direct:
+      acknowledge-mode: manual
+    simple:
+      acknowledge-mode: manual
