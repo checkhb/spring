@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/springboot/springboot-dubbo/dubbo-api/dubbo-api.iml" filepath="$PROJECT_DIR$/springboot/springboot-dubbo/dubbo-api/dubbo-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot/springboot-dubbo/dubbo-consumer/dubbo-consumer.iml" filepath="$PROJECT_DIR$/springboot/springboot-dubbo/dubbo-consumer/dubbo-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot/springboot-dubbo/dubbo-producer/dubbo-producer.iml" filepath="$PROJECT_DIR$/springboot/springboot-dubbo/dubbo-producer/dubbo-producer.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spring.iml" filepath="$PROJECT_DIR$/.idea/spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot/springboot-cache-redis/springboot-cache-redis.iml" filepath="$PROJECT_DIR$/springboot/springboot-cache-redis/springboot-cache-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot/springboot-dubbo/springboot-dubbo.iml" filepath="$PROJECT_DIR$/springboot/springboot-dubbo/springboot-dubbo.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot/springboot-more-druid/springboot-more-druid.iml" filepath="$PROJECT_DIR$/springboot/springboot-more-druid/springboot-more-druid.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot/springboot-rabbitmq/springboot-rabbitmq.iml" filepath="$PROJECT_DIR$/springboot/springboot-rabbitmq/springboot-rabbitmq.iml" />
     </modules>

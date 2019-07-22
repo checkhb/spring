@@ -8,6 +8,8 @@
       <list>
         <option value="$PROJECT_DIR$/springboot/springboot-more-druid/pom.xml" />
         <option value="$PROJECT_DIR$/springboot/springboot-rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot/springboot-cache-redis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot/springboot-dubbo/pom.xml" />
       </list>
     </option>
   </component>

@@ -2,7 +2,6 @@ package com.fsl.springbootcacheredis.controller;
 
 
 import com.alibaba.fastjson.JSON;
-import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import com.fsl.springbootcacheredis.entity.Student;
 import com.fsl.springbootcacheredis.service.StudentService;
 import com.fsl.springbootcacheredis.util.ServiceResult;
@@ -12,11 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.annotation.Resource;
 
 
 /**
@@ -45,6 +47,9 @@ public class StudentController {
 
     @Autowired
     private SnowFlakeWorker snowFlakeWorker;
+
+    @Autowired
+    private RedisTemplate<Object,Object> redisTemplate;
 
     /**
      * 查询方法使用@Cacheable注解，根据id去缓存当中获取数据
@@ -107,7 +112,16 @@ public class StudentController {
     @CacheEvict(value="students", key="#id")
     public ServiceResult deleteStudent(@PathVariable Long id){
         studentService.deleteById(id);
-        return ServiceResult.success("");
+        return ServiceResult.success("delete success");
     }
 
+    @ResponseBody
+    @RequestMapping("/setStudent")
+    public ServiceResult setSutdent(@RequestBody Student student) {
+        this.redisTemplate.opsForValue().set("ABC",student);
+        System.out.println("1111111111111");
+        Student sudent = (Student) this.redisTemplate.opsForValue().get("ABC");
+        System.out.println("sudent:" + JSON.toJSONString(sudent));
+        return ServiceResult.success("");
+    }
 }
