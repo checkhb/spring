@@ -8,10 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springboot-more-druid" />
         <module name="springboot-cache-redis" />
-        <module name="dubbo-consumer" />
         <module name="springboot-rabbitmq" />
         <module name="dubbo-producer" />
-        <module name="dubbo-api" />
         <module name="springboot-dubbo" />
       </profile>
     </annotationProcessing>
