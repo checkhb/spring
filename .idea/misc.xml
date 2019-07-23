@@ -10,6 +10,10 @@
         <option value="$PROJECT_DIR$/springboot/springboot-rabbitmq/pom.xml" />
         <option value="$PROJECT_DIR$/springboot/springboot-cache-redis/pom.xml" />
         <option value="$PROJECT_DIR$/springboot/springboot-dubbo/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot/springboot-ehcache/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot/springboot-jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot/springboot-jwt/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot/springboot-hikari/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
