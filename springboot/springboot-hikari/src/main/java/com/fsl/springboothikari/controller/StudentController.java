@@ -22,7 +22,13 @@ public class StudentController {
     @ResponseBody
     @RequestMapping("/listStudent")
     public ServiceResult listStudent(){
-        return ServiceResult.success(studentService.selectByPrimaryKey(996018439061505L));
+        return ServiceResult.success(studentService.getById(11L));
+    }
+
+    @ResponseBody
+    @RequestMapping("/delete")
+    public ServiceResult deleteStudent() {
+        return ServiceResult.success(studentService.deleteByPrimaryKey(11L));
     }
 
 }

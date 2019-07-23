@@ -2,6 +2,7 @@ package com.fsl.springboothikari.service.impl;
 
 
 
+import com.fsl.springboothikari.dao.StudentDao;
 import com.fsl.springboothikari.dto.Student;
 import com.fsl.springboothikari.mapper.StudentMapper;
 import com.fsl.springboothikari.service.StudentService;
@@ -19,9 +20,20 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentMapper studentMapper;
 
+    @Autowired
+    private StudentDao studentDao;
+
+    @Override
+    public Student getById(Long id) {
+        return studentDao.findById(id).get();
+    }
+
     @Override
     public int deleteByPrimaryKey(Long id) {
-        return studentMapper.deleteByPrimaryKey(id);
+        studentDao.deleteById(id);
+        //抛异常就会回滚
+        //int j = 10/0;
+        return 1;
     }
 
     @Override

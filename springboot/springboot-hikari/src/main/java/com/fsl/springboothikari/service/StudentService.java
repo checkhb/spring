@@ -8,6 +8,14 @@ import java.util.List;
 
 public interface StudentService {
 
+    /**
+     * 通过JPA的方法进行调用
+     * @param id
+     * @return
+     */
+    public Student getById(Long id);
+
+
     int deleteByPrimaryKey(Long id);
 
     int insert(Student record);

@@ -29,7 +29,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP
 		假如使用springboot的话，由于默认已经导入了相关的包，所以一定不要在这里再次添加依赖，
 		否则就会在application.properties出现配置无效
