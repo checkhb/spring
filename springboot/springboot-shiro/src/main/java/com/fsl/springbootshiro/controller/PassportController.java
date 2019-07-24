@@ -1,17 +1,16 @@
 package com.fsl.springbootshiro.controller;
 
+import com.fsl.springbootshiro.business.entity.User;
 import com.fsl.springbootshiro.framework.object.ResponseVO;
 import com.fsl.springbootshiro.util.ResultUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -55,6 +54,7 @@ public class PassportController {
             return ResultUtil.error(e.getMessage());
         }
     }
+
 
     /**
      * 使用权限管理工具进行用户的退出，跳出登录，给出提示信息

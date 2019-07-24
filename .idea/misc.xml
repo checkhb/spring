@@ -14,6 +14,8 @@
         <option value="$PROJECT_DIR$/springboot/springboot-jpa/pom.xml" />
         <option value="$PROJECT_DIR$/springboot/springboot-jwt/pom.xml" />
         <option value="$PROJECT_DIR$/springboot/springboot-hikari/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot/springboot-generator/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot/springboot-shiro/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

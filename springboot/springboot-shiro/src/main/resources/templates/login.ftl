@@ -73,8 +73,10 @@
                 if (json.status === 200) {
                     window.location.href = "/";
                 }else{
+                    alert("用户名或密码不正确，请重新输入！");
                     $.tool.ajaxSuccess(json);
                     $("#img-kaptcha").attr("src", '/getKaptcha?time=' + new Date().getTime());
+
                 }
             }
         });

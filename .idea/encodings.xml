@@ -3,10 +3,12 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/springboot/springboot-cache-redis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot/springboot-ehcache" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot/springboot-generator" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot/springboot-hikari" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot/springboot-jpa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot/springboot-jwt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot/springboot-more-druid" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot/springboot-rabbitmq" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot/springboot-shiro" charset="UTF-8" />
   </component>
 </project>

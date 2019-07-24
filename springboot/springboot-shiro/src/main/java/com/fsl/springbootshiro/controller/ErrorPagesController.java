@@ -67,6 +67,7 @@ public class ErrorPagesController implements ErrorController {
      */
     @Autowired
     public ErrorPagesController(ErrorAttributes errorAttributes) {
+        //断言
         Assert.notNull(errorAttributes, "ErrorAttributes must not be null");
         this.errorAttributes = errorAttributes;
     }
